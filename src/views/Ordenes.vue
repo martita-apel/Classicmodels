@@ -3,7 +3,61 @@
     <b-breadcrumb :items="items"></b-breadcrumb>
 
     <h1>Revisa la lista de órdenes completa</h1>
-    <table class="tabla_ordenes">
+    <b-container>
+      <b-row id="select">
+        <div>
+          <label for="oficinas">Oficinas:</label>
+          <b-form-select id="oficinas" name="oficina_list" form="form">
+            <option value="New York">New York</option>
+            <option value="Boston">Boston</option>
+            <option value="San Francisco">San Francisco</option>
+            <option value="Psris">Paris</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="Sydney">Sydney</option>
+            <option value="London">London</option>
+          </b-form-select>
+        </div>
+
+        <div class="select px-3">
+          <label for="estado">Estado:</label>
+          <b-form-select id="estado" name="estado" form="form">
+            <option value="Ingresado">Ingresado</option>
+            <option value="Preparacion">Preparación</option>
+            <option value="Entregado">Entregado</option>
+            <option value="Anulado">Anulado</option>
+            <option value="Devuelto">Devuelto</option>
+          </b-form-select>
+        </div>
+
+        <div>
+          <label for="datepicker">Elige una fecha</label>
+          <b-form-datepicker
+            id="datepicker"
+            v-model="value"
+            placeholder="Inicio"
+            class="mb-0"
+          ></b-form-datepicker>
+        </div>
+        <div>
+          <label for="datepicker"> </label>
+          <b-form-datepicker
+            id="datepicker"
+            v-model="value"
+            placeholder="Fin"
+            class="mb-0 mx-3 mt-auto"
+          ></b-form-datepicker>
+        </div>
+        <b-button lg="4" class="pb-0 ml-4 mt-auto dark">Buscar</b-button>
+      </b-row>
+    </b-container>
+
+    <table
+      class="tabla_ordenes"
+      id="my-table"
+      :items="ordenes"
+      :per-page="perPage"
+      :current-page="currentPage"
+    >
       <thead>
         <tr>
           <th>Nº Orden</th>
@@ -61,6 +115,15 @@
         </tr>
       </tbody>
     </table>
+
+    <b-pagination
+      class="paginas"
+      v-model="currentPage"
+      :total-rows="rows"
+      :per-page="perPage"
+      aria-controls="my-table"
+    ></b-pagination>
+
     <router-view></router-view>
   </div>
 </template>
@@ -83,10 +146,16 @@ export default {
         },
       ],
       max: 1,
+      perPage: 3,
+      currentPage: 1,
+      value: "",
     };
   },
   computed: {
-    ...mapState(["ordenes"]),
+    ...mapState(["ordenes", "oficinas"]),
+    rows() {
+      return this.items.length;
+    },
   },
 };
 </script>
@@ -130,5 +199,14 @@ export default {
 }
 h1 {
   padding-top: 40px;
+}
+.paginas {
+  justify-content: center;
+}
+#select {
+  text-align: left;
+  padding: 10px;
+  align-items: baseline;
+  justify-content: center;
 }
 </style>

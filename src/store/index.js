@@ -157,6 +157,58 @@ export default new Vuex.Store({
         },
       ],
     },
+    oficinas: [
+      {
+        id: 10,
+        name: "New York",
+      },
+      {
+        id: 11,
+        name: "Boston",
+      },
+      {
+        id: 12,
+        name: "San Francisco",
+      },
+      {
+        id: 13,
+        name: "Paris",
+      },
+      {
+        id: 14,
+        name: "Tokyo",
+      },
+      {
+        id: 15,
+        name: "Sydney",
+      },
+      {
+        id: 16,
+        name: "London",
+      },
+    ],
+    estados: [
+      {
+        id: 1,
+        name: "Ingresado",
+      },
+      {
+        id: 2,
+        name: "Preparacion",
+      },
+      {
+        id: 3,
+        name: "Entregado",
+      },
+      {
+        id: 4,
+        name: "Anulado",
+      },
+      {
+        id: 5,
+        name: "Devuelto",
+      },
+    ],
   },
   mutations: {
     CURRENT_USER(state, user) {

@@ -1,6 +1,6 @@
 <template>
   <div class="ordenes">
-    <b-container>
+    <b-container class="pt-5">
       <h2>Detalle Orden</h2>
       <h2>Nº {{ detalle_orden.orden.num_orden }}</h2>
 

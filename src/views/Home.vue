@@ -2,7 +2,7 @@
   <div class="home">
     <b-breadcrumb :items="items" class="mb-0"></b-breadcrumb>
 
-    <b-jumbotron bg-variant="info" text-variant="white" class="text-left">
+    <b-jumbotron bg-variant="info" text-variant="white" class="text-left hero">
       <template v-slot:header>!Bienvenida,</template>
 
       <template v-slot:lead>
@@ -115,10 +115,13 @@ export default {
   min-width: 100%;
   min-height: 670px;
 }
-/* .image {
-  max-width: 100%;
-  max-height: 300px;
-} */
+.hero {
+  background-image: url("https://images.unsplash.com/photo-1582037285265-2b17b7aee005?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+}
+
 h1 {
   font-size: 30px;
   padding-top: 40px;
