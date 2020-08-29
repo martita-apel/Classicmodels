@@ -19,20 +19,20 @@
     <b-card-group deck class="m-2">
       <b-card v-for="kpi in dashboard.kpis" :key="kpi.id" :title="kpi.nombre">
         <div class="estad">
-          <div class="detail" v-show="kpi.entregadas == kpi.entregadas">
+          <div class="detail" v-show="kpi.entregadas">
             <b-card-text class="result">{{ kpi.entregadas }}</b-card-text>
             <h6>órdenes entregadas</h6>
           </div>
-          <div class="detail" v-show="kpi.entregadas == kpi.pendientes">
+          <div class="detail" v-show="kpi.pendientes">
             <b-card-text class="result">{{ kpi.pendientes }}</b-card-text>
             <h6>órdenes pendientes</h6>
           </div>
 
-          <div class="detail" v-show="kpi.entregadas == kpi.totales">
+          <div class="detail" v-show="kpi.totales">
             <b-card-text class="result">{{ kpi.totales }}</b-card-text>
             <h6>órdenes totales</h6>
           </div>
-          <div class="detail" v-show="kpi.entregadas == kpi.atrasadas">
+          <div class="detail" v-show="kpi.atrasadas">
             <b-card-text class="result">{{ kpi.atrasadas }}</b-card-text>
             <h6>órdenes atrasadas</h6>
           </div>
