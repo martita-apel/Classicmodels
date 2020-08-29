@@ -26,7 +26,6 @@
             <b-progress
               :value="orden.avance_preparacion"
               max="1"
-              show-value
               class="mb-3"
             ></b-progress>
           </td>
@@ -50,13 +49,19 @@
           </td>
 
           <td>
-            <b-button variant="dark" class="text-right boton-detalle"
-              >Ver Detalle</b-button
+            <router-link :to="{ name: 'Detail' }" id="leer_mas"
+              ><b-button
+                :to="{ name: 'Detail' }"
+                variant="dark"
+                class="text-right boton-detalle"
+                >Ver Detalle</b-button
+              ></router-link
             >
           </td>
         </tr>
       </tbody>
     </table>
+    <router-view></router-view>
   </div>
 </template>
 

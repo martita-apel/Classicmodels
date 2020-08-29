@@ -10,7 +10,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-navbar-nav class="links">
-            <b-nav-item to="/ordenes">Órdenes</b-nav-item>
+            <b-nav-item to="/ordenes/1">Órdenes</b-nav-item>
             <b-nav-item to="/inventario">Inventario</b-nav-item>
           </b-navbar-nav>
 

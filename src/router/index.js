@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 const Ordenes = () => import("../views/Ordenes.vue");
+const Detail = () => import("../views/Detail.vue");
 const NotFound = () => import("../views/NotFound.vue");
 
 import firebase from "firebase";
@@ -27,9 +28,16 @@ const router = new VueRouter({
       component: Login,
     },
     {
-      path: "/ordenes",
+      path: "/ordenes/:detail",
       name: "Ordenes",
       component: Ordenes,
+      children: [
+        {
+          path: "detail",
+          name: "Detail",
+          component: Detail,
+        },
+      ],
       meta: {
         login: true,
       },
