@@ -41,7 +41,7 @@
       </b-card>
     </b-card-group>
 
-    <div class="tablas">
+    <b-row class="justify-content-center">
       <div class="tabla">
         <h3 class="titulo-orden">Últimas órdenes</h3>
         <table class="tabla_ordenes">
@@ -83,7 +83,7 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </b-row>
   </div>
 </template>
 
@@ -138,9 +138,6 @@ h2 {
 .result {
   font-size: 50px;
   font-weight: bold;
-}
-.tablas {
-  display: inline;
 }
 
 .tabla {
