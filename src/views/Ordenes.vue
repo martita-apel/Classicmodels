@@ -7,7 +7,12 @@
       <b-row id="select">
         <div>
           <label for="oficinas">Oficinas:</label>
-          <b-form-select id="oficinas" name="oficina_list" form="form">
+          <b-form-select
+            id="oficinas"
+            name="oficina_list"
+            form="form"
+            placeholder="Selecciona una opción"
+          >
             <option value="New York">New York</option>
             <option value="Boston">Boston</option>
             <option value="San Francisco">San Francisco</option>
@@ -20,7 +25,12 @@
 
         <div class="select px-3">
           <label for="estado">Estado:</label>
-          <b-form-select id="estado" name="estado" form="form">
+          <b-form-select
+            id="estado"
+            name="estado"
+            form="form"
+            placeholder="Selecciona una opción"
+          >
             <option value="Ingresado">Ingresado</option>
             <option value="Preparacion">Preparación</option>
             <option value="Entregado">Entregado</option>
@@ -38,16 +48,16 @@
             class="mb-0"
           ></b-form-datepicker>
         </div>
-        <div>
-          <label for="datepicker"> </label>
+        <div class="mx-3">
+          <label for="datepicker">Acá también</label>
           <b-form-datepicker
             id="datepicker"
             v-model="value"
             placeholder="Fin"
-            class="mb-0 mx-3 mt-auto"
+            class="mb-0 px-3"
           ></b-form-datepicker>
         </div>
-        <b-button lg="4" class="pb-0 ml-4 mt-auto dark">Buscar</b-button>
+        <b-button size="md" class="pb-2 px-3 mt-auto dark">BUSCAR</b-button>
       </b-row>
     </b-container>
 
