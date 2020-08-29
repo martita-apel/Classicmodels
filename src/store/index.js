@@ -1,12 +1,74 @@
 import Vue from "vue";
 import Vuex from "vuex";
-/* import axios from "axios";
- */
+import axios from "axios";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     currentUser: null,
+    dashboard: {
+      kpis: [
+        {
+          nombre: "cumplimiento diario de ordenes",
+          entregadas: "1500",
+          pendientes: "500",
+        },
+        {
+          nombre: "Ordenes atrasadas jornada",
+          totales: "700",
+          atrasadas: "14",
+        },
+      ],
+      ultimas_ordenes: [
+        {
+          num_orden: "123446",
+          cliente: "Multitiendas Sigma SA",
+          fecha_entrega: "2020-07-20",
+          estado: "Ingresado",
+        },
+        {
+          num_orden: "123445",
+          cliente: "Jugueteria Asimov SpA",
+          fecha_entrega: "2020-07-20",
+          estado: "Preparacion",
+        },
+        {
+          num_orden: "123444",
+          cliente: "Bazar Don Lalo LTDA",
+          fecha_entrega: "2020-07-18",
+          estado: "Preparacion",
+        },
+        {
+          num_orden: "123443",
+          cliente: "Claudia Ingrid Romero",
+          fecha_entrega: "2020-07-18",
+          estado: "Entregado",
+        },
+      ],
+      ultimas_devoluciones: [
+        {
+          num_orden: "122289",
+          cliente: "Multi Game SpA",
+          fecha_entrega: "2020-07-20",
+        },
+        {
+          num_orden: "122283",
+          cliente: "Jugueteria Play LTDA",
+          fecha_entrega: "2020-07-20",
+        },
+        {
+          num_orden: "122271",
+          cliente: "Tiendas La Reina SA",
+          fecha_entrega: "2020-07-18",
+        },
+        {
+          num_orden: "122232",
+          cliente: "Ofertas Unicas LTDA",
+          fecha_entrega: "2020-07-14",
+        },
+      ],
+    },
     ordenes: [
       {
         num_orden: 123445,
@@ -45,18 +107,16 @@ export default new Vuex.Store({
         estado: "Entregado",
       },
     ],
-    pagedResult: {
-      page: 1,
-      size: 10,
-      total: 4,
-    },
   },
   mutations: {
     CURRENT_USER(state, user) {
       state.currentUser = user;
     },
-    GET_ORDENES(state, ordenes) {
-      state.ordenes = ordenes;
+    GET_ORDENES(state, data) {
+      state.ordenes = data;
+    },
+    GET_DASHBOARD(state, data) {
+      state.dashboard = data;
     },
   },
   actions: {
@@ -70,9 +130,9 @@ export default new Vuex.Store({
         }
       });
     },
-    /* getOrdenes({ commit }) {
+    getOrdenes({ commit }) {
       axios
-        .get("http://157.230.190.251/api/v1/cmodels/secure/ordenes/")
+        .get("./public/api/ordenes.json")
         .then((response) => {
           console.log(response.data);
           commit("GET_ORDENES", response.data);
@@ -80,7 +140,18 @@ export default new Vuex.Store({
         .catch(function(error) {
           console.log(error);
         });
-    }, */
+    },
+    getDashboard({ commit }) {
+      axios
+        .get("../api/dashboard.json")
+        .then((response) => {
+          console.log(response.data);
+          commit("GET_DASHBOARD", response.data);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
   },
   modules: {},
 });
