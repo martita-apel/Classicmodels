@@ -1,16 +1,18 @@
 <template>
   <div class="notfound">
-    <!--     <img src="../assets/birds-notfound.png" alt="birds" />
- -->
-    <h1>
-      ¡Hola de nuevo, <br />
-      esta página no se ha encontrado!
-    </h1>
-    <b-button class="boton" variant="outline-warning" to="/"
-      >VUELVE AL INICIO
-      <!--       <img class="pajaro" src="../assets/pajarito.png" alt="pajaro" />
- -->
-    </b-button>
+    <div class="text">
+      <h1>
+        ¡Hola de nuevo, <br />
+        esta página no se ha encontrado!
+      </h1>
+      <b-button class="boton" variant="outline-warning" to="/"
+        >VUELVE AL INICIO</b-button
+      >
+    </div>
+    <img
+      src="https://i.pinimg.com/originals/65/5d/2d/655d2da400a648abca600766a89deead.gif"
+      alt="car"
+    />
   </div>
 </template>
 
@@ -26,21 +28,19 @@ h1 {
   margin-top: 30px;
 }
 img {
-  max-width: 70%;
-  padding: 0 50px;
-  margin-top: 50px;
+  width: 100%;
+  position: relative;
 }
 .boton {
-  margin: 30px;
-  font-size: 20px;
+  top: 220px;
+  margin: 0 auto;
+  font-size: 15px;
   font-weight: bold;
   letter-spacing: 4px;
-  padding-top: 10px;
-  padding-left: 15px;
 }
-.pajaro {
-  width: 40px;
-  padding: 0;
-  margin: 0;
+.text {
+  position: absolute;
+  z-index: 1;
+  left: 22%;
 }
 </style>
