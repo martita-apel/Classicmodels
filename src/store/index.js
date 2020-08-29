@@ -182,7 +182,7 @@ export default new Vuex.Store({
     },
     getOrdenes({ commit }) {
       axios
-        .get("./public/api/ordenes.json")
+        .get("/public/api/ordenes.json")
         .then((response) => {
           console.log(response.data);
           commit("GET_ORDENES", response.data);
@@ -193,7 +193,7 @@ export default new Vuex.Store({
     },
     getDashboard({ commit }) {
       axios
-        .get("../api/dashboard.json")
+        .get("/public/api/dashboard.json")
         .then((response) => {
           console.log(response.data);
           commit("GET_DASHBOARD", response.data);

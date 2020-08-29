@@ -37,7 +37,6 @@
             <h6>órdenes atrasadas</h6>
           </div>
         </div>
-        <a href="#" class="card-link">Ver Detalle</a>
       </b-card>
     </b-card-group>
 
