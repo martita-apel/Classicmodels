@@ -1,5 +1,7 @@
 <template>
   <div class="ordenes">
+    <b-breadcrumb :items="items"></b-breadcrumb>
+
     <h1>Revisa la lista de órdenes completa</h1>
     <table class="tabla_ordenes">
       <thead>
@@ -65,29 +67,22 @@ export default {
   name: "Ordenes",
   data() {
     return {
+      items: [
+        {
+          text: "Home",
+          to: "/",
+        },
+        {
+          text: "Órdenes",
+          active: true,
+        },
+      ],
       max: 1,
     };
   },
   computed: {
     ...mapState(["ordenes"]),
   },
-  methods: {
-    /*     ...mapActions(["getOrdenes"]),
-     */
-    /* eliminarPatient(id) {
-      const confirmar = confirm("¿Seguro que quieres eliminar este paciente?");
-      if (confirmar) {
-        this.deletePatient(id);
-      }
-    },
-    editarPatient(id) {
-      this.updateEdit();
-      this.findPatient(id);
-    }, */
-  },
-  /* created() {
-    this.getOrdenes();
-  }, */
 };
 </script>
 
