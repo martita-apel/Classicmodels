@@ -2,10 +2,10 @@
 
 ![Login](login.png)
 
+![Hero](hero.png)
 ![Inicio](inicio.png)
 
 ![Ordenes](ordenes.png)
-
 ![Detalle](detalle.png)
 
 ## Project setup
@@ -28,7 +28,7 @@ npm run build
 
 ### Customize configuration
 
-See [web](https://classicmodels.web.app)
+See [web](https://martita-apel.github.io/Classicmodels/)
 
 email: usuario@classicmodels.com
 password: abc123
