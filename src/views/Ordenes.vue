@@ -1,6 +1,6 @@
 <template>
   <div class="ordenes">
-    <h1>Órdenes</h1>
+    <h1>Revisa la lista de órdenes completa</h1>
     <table class="tabla_ordenes">
       <thead>
         <tr>
@@ -20,7 +20,14 @@
           <td>{{ orden.monto }}</td>
           <td>{{ orden.cant_productos }}</td>
           <td>{{ orden.fecha_entrega }}</td>
-          <td>{{ orden.avance_preparacion }}</td>
+          <td>
+            <b-progress
+              :value="orden.avance_preparacion"
+              max="1"
+              show-value
+              class="mb-3"
+            ></b-progress>
+          </td>
           <td>
             {{ orden.estado }}
             <b-icon
@@ -41,7 +48,7 @@
           </td>
 
           <td>
-            <b-button variant="success" class="text-right"
+            <b-button variant="dark" class="text-right boton-detalle"
               >Ver Detalle</b-button
             >
           </td>
@@ -57,7 +64,9 @@ import { mapState } from "vuex";
 export default {
   name: "Ordenes",
   data() {
-    return {};
+    return {
+      max: 1,
+    };
   },
   computed: {
     ...mapState(["ordenes"]),
@@ -114,5 +123,12 @@ export default {
 }
 .tabla_ordenes td {
   border: 1px solid;
+}
+.boton-detalle {
+  min-width: 85px;
+  font-size: 12px;
+}
+h1 {
+  padding-top: 40px;
 }
 </style>
