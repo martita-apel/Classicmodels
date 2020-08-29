@@ -10,15 +10,14 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-navbar-nav class="links">
-            <b-nav-item to="/list">Productos</b-nav-item>
+            <b-nav-item to="/ordenes">Órdenes</b-nav-item>
           </b-navbar-nav>
 
           <b-nav-item-dropdown right v-show="currentUser">
-            <!-- Using 'button-content' slot -->
             <template v-slot:button-content>
               <em>Usuario</em>
             </template>
-            <b-dropdown-item href="#" @click="logout"
+            <b-dropdown-item to="/login" @click="logout"
               >Cerrar Sesión</b-dropdown-item
             >
           </b-nav-item-dropdown>

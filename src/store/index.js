@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    currentUser: undefined,
+    currentUser: null,
   },
   mutations: {
     CURRENT_USER(state, user) {
